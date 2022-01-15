@@ -1,6 +1,7 @@
 
 import React from 'react';
 import './App.css';
+import AppVodBank from './comps/appVodBank';
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <>
-   
+   <AppVodBank/>
     </>
   );
 }
