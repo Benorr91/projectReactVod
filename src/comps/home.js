@@ -1,15 +1,15 @@
 import axios from 'axios';
-import React, {  useEffect, useState }
- from 'react';
+import React, { useEffect, useState }
+    from 'react';
 import { useParams } from 'react-router-dom';
 //  import {AppCont} from './context/appCont';
 
-function Home(props){
- let params=useParams();
- console.log(params.search);
+function Home(props) {
+    let params = useParams();
+    console.log(params.search);
 
-   let [ar, setAr] = useState([])
-   
+    let [ar, setAr] = useState([])
+
     useEffect(() => {
         doApi();
     }, [params.search])
@@ -20,22 +20,27 @@ function Home(props){
         console.log(params.search);
         console.log(resp.data.Search);
     }
- 
-    
-    return(
-       <div className='container' >
-           <h1>Gallery</h1>
-           {ar.map((item,i)=>{
-               return(
-                 
-                         <img style={{hight:"20px"}} className=' p-3 ' key={i}  src={item.Poster} alt={item.Title} />
 
-              
-               )
-              
-           })}
 
-       </div>
+    return (
+        <div className='container' >
+            <h1>Gallery</h1>
+            <div className="row p-3">
+            {ar.map((item, i) => {
+                return (
+                  
+                    <div className="card shadow p-3 m-3" style={{width:" 18rem"}}>
+                      <img src={item.Poster=="N/A" ?"https://cdn.pixabay.com/photo/2021/12/02/12/17/happy-new-year-6840369__340.png":item.Poster} className="card-img-top" alt={item.Title}/>
+                      <div className="card-body">
+                        <h5 className="card-title">{item.Title}</h5>
+                        {/* <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
+                        {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+                      </div>
+                    </div>
+                )
+            })}
+        </div>
+        </div>
     )
 }
 
