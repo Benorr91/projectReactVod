@@ -1,9 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './home';
 import Layout from './layout';
-// import {AppCont} from './context/appCont';
+import Single from './single';
 
 function AppVodBank
     (props) {
@@ -15,7 +15,10 @@ function AppVodBank
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />}></Route>
-                        <Route path="/gallery/:search" element={<Home />}></Route>
+                        <Route path="/gallery/:searchbyYear" element={<Home />}></Route>
+                        <Route path="/search/:searchbyCat" element={<Home />}></Route>
+                        <Route path="/single/:id" element={<Single />}></Route>
+                   
                     </Route>
                 </Routes>
               
