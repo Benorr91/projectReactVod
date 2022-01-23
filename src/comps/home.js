@@ -27,12 +27,12 @@ function Home(props) {
         navigate("/search/" + searchQ.current.value);
     }
     let onBtnClick2 = (e) => {
-        navigate("/gallery/" + e.target.innerHTML);
+        navigate("/year/" + e.target.innerHTML);
 
     }
     let onBtnClick3 = (e) => {
         // navigate("/gallery/" + e.target.innerHTML);
-        navigate("/single/" + e.target.value);
+        navigate("/video/" + e.target.value);
         console.log(searchQ.current.value);
         console.log(e.target.value);
 
@@ -62,6 +62,7 @@ function Home(props) {
                     {yearsAr.map((item, i) => {
                         return (
                             <button key={i} className="badge bg-primary text-wrap mx-1 text-light" onClick={onBtnClick2}> {item}</button>
+                            
                         )
                     })}
                 </div>

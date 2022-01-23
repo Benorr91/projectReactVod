@@ -36,6 +36,7 @@ function Single(props) {
                                 <p className="card-text"> Summary: {item.Plot}</p>
                                 <p className="card-text">Movie time: {item.Runtime}</p>
                                 <p className="card-text">Actors: {item.Actors}</p>
+                                <Link to="/">Home</Link>
                                 
                                
                             </div>
