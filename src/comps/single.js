@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState }
     from 'react';
+    import { AiFillStar } from "react-icons/ai";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 function Single(props) {
@@ -36,7 +37,7 @@ function Single(props) {
                                 <p className="card-text"> Summary: {item.Plot}</p>
                                 <p className="card-text">Movie time: {item.Runtime}</p>
                                 <p className="card-text">Actors: {item.Actors}</p>
-                                <p className="card-text">Ratings: {item.Ratings[0].Value}</p>
+                                <p className="card-text">Ratings: {item.Ratings[0].Value} <AiFillStar/></p>
                                 <Link to="/">Home</Link>
                                 
                                
