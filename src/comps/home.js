@@ -23,15 +23,14 @@ function Home(props) {
         console.log(params.searchbyYear);
         console.log(resp.data.Search);
     }
-    let onBtnClick = () => {
+    let onBtnClickSearch = () => {
         navigate("/search/" + searchQ.current.value);
     }
-    let onBtnClick2 = (e) => {
+    let onBtnClickYear = (e) => {
         navigate("/year/" + e.target.innerHTML);
 
     }
-    let onBtnClick3 = (e) => {
-        // navigate("/gallery/" + e.target.innerHTML);
+    let onBtnClickInfo = (e) => {
         navigate("/video/" + e.target.value);
         console.log(searchQ.current.value);
         console.log(e.target.value);
@@ -48,20 +47,20 @@ function Home(props) {
 
     return (
         <div className='container' >
-            <h1>Gallery</h1>
+            <h1 className='h1Home my-3 display-3 fw-bold'>Vod Movies</h1>
             <nav className="navbar navbar-light bg-light">
                 <div className="container-fluid ">
                     <Link className=' mx-2' to="/">Home</Link>
                     <div className="d-flex ">
                         <input ref={searchQ} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" onClick={onBtnClick}>Search</button>
+                        <button className="btn btn-outline-success" onClick={onBtnClickSearch}>Search</button>
                     </div>
 
                 </div>
                 <div className='mt-3'>
                     {yearsAr.map((item, i) => {
                         return (
-                            <button key={i} className="badge bg-primary text-wrap mx-1 text-light" onClick={onBtnClick2}> {item}</button>
+                            <button key={i} className="badge bg-primary text-wrap mx-1 text-light" onClick={onBtnClickYear}> {item}</button>
                             
                         )
                     })}
@@ -76,7 +75,7 @@ function Home(props) {
                             <div className="card-body">
                                 <h5 className="card-title">{item.Title}</h5>
                 
-                                <button value={item.imdbID} onClick={onBtnClick3} className="btn btn-primary" >Go somewhere</button>
+                                <button value={item.imdbID} onClick={onBtnClickInfo} className="btn btn-primary" >More Info</button>
                             </div>
                         </div>
                     )
