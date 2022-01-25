@@ -26,7 +26,6 @@ function Single(props) {
         <div className='container'>
             {item.Poster ?
                 <div>
-                    <Link to="/">Home</Link>
                     <h1 className='text-center'>{item.Title}</h1>
                     <div className="card mx-auto" style={{ width: "24rem" }}>
                         <img src={item.Poster} className="card-img-top" alt="..." />
@@ -38,7 +37,7 @@ function Single(props) {
                             <p className="card-text">Movie time: {item.Runtime}</p>
                             <p className="card-text">Actors: {item.Actors}</p>
                             <p className="card-text">Ratings: {item.Ratings[0].Value} <AiFillStar /></p>
-                            <Link to="/">Home</Link>
+                            <Link to={"/"}>Back</Link>
 
 
                         </div>

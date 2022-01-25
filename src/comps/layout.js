@@ -6,7 +6,7 @@ function Layout(props) {
     return (
         <>
             <header className='header'>
-
+        
             </header>
             <main>
                 <Outlet></Outlet>
