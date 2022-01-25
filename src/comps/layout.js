@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineArrowUp } from "react-icons/ai";
+import { AiFillCopyrightCircle } from 'react-icons/ai';
 import { Link, Outlet } from 'react-router-dom';
 
 function Layout(props) {
@@ -13,7 +14,7 @@ function Layout(props) {
             </main>
             <footer className='footer d-flex'>
                 <div className='fw-bold mx-auto'>
-                  <h3 >All rights reserved to Ben-Or Radan</h3>  
+                  <h3 >All rights reserved to Ben-Or Radan <AiFillCopyrightCircle/></h3>  
                 </div>
                 {/* <Link to={"#"} ><AiOutlineArrowUp/></Link> */}
                 <div className=' '>
