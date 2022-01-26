@@ -1,17 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react';
-// import StarRatings from '/react-star-ratings';
+import React, { useEffect, useState } from 'react';
 
-import { AiFillStar } from "react-icons/ai";
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function Single(props) {
     let params = useParams();
     let [item, setItem] = useState({})
-    let searchQ = useRef();
-    let navigate = useNavigate();
-
-
+ 
     useEffect(() => {
         console.log(params.searchbyCat);
         doApi();
@@ -23,23 +18,13 @@ function Single(props) {
         console.log(resp.data);
 
     }
-    // const [rating, setRating] = React.useState(0);
-    // const [hoverRating, setHoverRating] = React.useState(0);
-    // const onMouseEnter = (index) => {
-    //     setHoverRating(index);
-    // };
-    // const onMouseLeave = () => {
-    //     setHoverRating(0);
-    // };
-    // const onSaveRating = (index) => {
-    //     setRating(index);
-    // };
+ 
     return (
 
         <div className='container'>
             {item.Poster ?
                 <div>
-                    <h1 className='text-center'>{item.Title}</h1>
+                    {/* <h1 className='text-center'>{item.Title}</h1> */}
                     <div className="card mx-auto" style={{ width: "24rem" }}>
                         <img src={item.Poster} className="card-img-top" alt="..." />
                         <div className="card-body">
@@ -49,9 +34,15 @@ function Single(props) {
                             <p className="card-text"> Summary: {item.Plot}</p>
                             <p className="card-text">Movie time: {item.Runtime}</p>
                             <p className="card-text">Actors: {item.Actors}</p>
-                            <p className="card-text">Ratings: {item.Ratings[0].Value} <AiFillStar /></p>
+                            <p className="card-text">Ratings: {item.Ratings[0].Value} 
+                                {[...Array(Math.floor(item.imdbRating))].map((star) => {
+                                    return (
+                                        <span className="star">&#9733;</span>
+                                    );
+                                })}
+                            </p>
                             <div className="box flex">
-                     
+
                             </div>
                             <Link to={"/"}>Back</Link>
 

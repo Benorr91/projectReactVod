@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState }
     from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 //  import {AppCont} from './context/appCont';
 
 function Home(props) {
@@ -50,7 +50,6 @@ function Home(props) {
             <h1 className='h1Home my-3 display-3 fw-bold'>Vod Movies</h1>
             <nav className="navbar navbar-light bg-light">
                 <div className="container-fluid ">
-                    {/* <Link className=' mx-2' to="/">Home</Link> */}
                     <div className="d-flex ">
                         <input ref={searchQ} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success" onClick={onBtnClickSearch}>Search</button>
