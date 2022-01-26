@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { useEffect, useRef, useState }
-    from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+// import StarRatings from '/react-star-ratings';
+
 import { AiFillStar } from "react-icons/ai";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
@@ -9,6 +10,7 @@ function Single(props) {
     let [item, setItem] = useState({})
     let searchQ = useRef();
     let navigate = useNavigate();
+
 
     useEffect(() => {
         console.log(params.searchbyCat);
@@ -21,6 +23,17 @@ function Single(props) {
         console.log(resp.data);
 
     }
+    const [rating, setRating] = React.useState(0);
+    const [hoverRating, setHoverRating] = React.useState(0);
+    const onMouseEnter = (index) => {
+        setHoverRating(index);
+    };
+    const onMouseLeave = () => {
+        setHoverRating(0);
+    };
+    const onSaveRating = (index) => {
+        setRating(index);
+    };
     return (
 
         <div className='container'>
@@ -37,6 +50,19 @@ function Single(props) {
                             <p className="card-text">Movie time: {item.Runtime}</p>
                             <p className="card-text">Actors: {item.Actors}</p>
                             <p className="card-text">Ratings: {item.Ratings[0].Value} <AiFillStar /></p>
+                            <div className="box flex">
+                                {[1, 2, 3, 4, 5].map((index) => {
+                                    return (
+                                        <RatingIcon
+                                            index={index}
+                                            rating={rating}
+                                            hoverRating={hoverRating}
+                                            onMouseEnter={onMouseEnter}
+                                            onMouseLeave={onMouseLeave}
+                                            onSaveRating={onSaveRating} />
+                                    )
+                                })}
+                            </div>
                             <Link to={"/"}>Back</Link>
 
 
