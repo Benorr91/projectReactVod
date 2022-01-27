@@ -2,28 +2,24 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 
-import {  useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Single(props) {
-    let params = useParams();
-    let [item, setItem] = useState({})
+    const params = useParams();
+    const [item, setItem] = useState({})
     const navigate = useNavigate();
-
 
     useEffect(() => {
         console.log(params.searchbyCat);
         doApi();
     }, [params.id])
     const doApi = async () => {
-        let url = `https://www.omdbapi.com/?i=${params.id}&apikey=813ad757`
-        let resp = await axios.get(url)
+        const url = `https://www.omdbapi.com/?i=${params.id}&apikey=813ad757`
+        const resp = await axios.get(url)
         setItem(resp.data)
         console.log(resp.data);
 
     }
-
-    
-   
 
 
     return (
@@ -33,7 +29,7 @@ function Single(props) {
                 <div>
                     {/* <h1 className='text-center'>{item.Title}</h1> */}
                     <div className="card mx-auto" style={{ width: "24rem" }}>
-                        <img src={item.Poster != "N/A"?item.Poster:"https://cdn.pixabay.com/photo/2013/05/07/08/46/paper-109277__340.jpg"} className="card-img-top" alt="..." />
+                        <img src={item.Poster != "N/A" ? item.Poster : "https://cdn.pixabay.com/photo/2013/05/07/08/46/paper-109277__340.jpg"} className="card-img-top" alt="..." />
                         <div className="card-body">
                             <div className="badge bg-danger float-end">{item.Type}</div>
                             <h5 className="card-title">{item.Title}</h5>
@@ -51,11 +47,8 @@ function Single(props) {
                             <div className="box flex">
 
                             </div>
-                          
-                            <button className='btn btn-dark' onClick={() => navigate(-1)}>go back</button>
-                            {/* <button onClick={history.goBack}>Back</button> */}
-                         
 
+                            <button className='btn btn-dark' onClick={() => navigate(-1)}>go back</button>
 
                         </div>
                     </div>

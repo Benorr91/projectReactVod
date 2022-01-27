@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState }
     from 'react';
 import {  useNavigate, useParams } from 'react-router-dom';
-//  import {AppCont} from './context/appCont';
+
 
 function Home(props) {
     let params = useParams();
@@ -10,12 +10,14 @@ function Home(props) {
     let navigate = useNavigate();
     console.log(params.searchbyYear);
     console.log(params.searchbyCat);
-
     let [ar, setAr] = useState([])
+
 
     useEffect(() => {
         doApi();
     }, [params.searchbyCat, params.searchbyYear])
+
+
     const doApi = async () => {
         let url = `https://www.omdbapi.com/?i=tt3896198&apikey=813ad757&s=${params.searchbyCat ? params.searchbyCat : "bank"}&y=${params.searchbyYear ? params.searchbyYear : ""}`
         let resp = await axios.get(url)
@@ -23,20 +25,20 @@ function Home(props) {
         console.log(params.searchbyYear);
         console.log(resp.data.Search);
     }
-    let onBtnClickSearch = () => {
+    const onBtnClickSearch = () => {
         navigate("/search/" + searchQ.current.value);
     }
-    let onBtnClickYear = (e) => {
+    const onBtnClickYear = (e) => {
         navigate("/year/" + e.target.innerHTML);
 
     }
-    let onBtnClickInfo = (e) => {
+    const onBtnClickInfo = (e) => {
         navigate("/video/" + e.target.value);
         console.log(searchQ.current.value);
         console.log(e.target.value);
 
     }
-    let yearsAr = [];
+    const yearsAr = [];
 
     for (let i = 2000; i <= 2021; i++) {
         yearsAr.push(i);
