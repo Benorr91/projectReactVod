@@ -46,9 +46,6 @@ function Home(props) {
     //     yearsAr.push(i);
     // }
  
-
-
-
     return (
         <div className='container' >
             <h1 className='h1Home my-3 display-3 fw-bold'>Vod Movies</h1>
