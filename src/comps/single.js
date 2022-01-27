@@ -25,7 +25,7 @@ function Single(props) {
     return (
 
         <div className='container'>
-            {item.Title ?
+            {item.Runtime ?
                 <div>
                     {/* <h1 className='text-center'>{item.Title}</h1> */}
                     <div className="card mx-auto" style={{ width: "24rem" }}>
