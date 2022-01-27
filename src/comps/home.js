@@ -39,11 +39,13 @@ function Home(props) {
 
     }
     const yearsAr = [];
+    const years=[1991,1978,2015,2020,1948,1999,2015];
+    years.sort();
 
-    for (let i = 2000; i <= 2021; i++) {
-        yearsAr.push(i);
-    }
-    console.log(yearsAr);
+    // for (let i = 2000; i <= 2021; i++) {
+    //     yearsAr.push(i);
+    // }
+ 
 
 
 
@@ -59,7 +61,7 @@ function Home(props) {
 
                 </div>
                 <div className='mt-3'>
-                    {yearsAr.map((item, i) => {
+                    {years.map((item, i) => {
                         return (
                             <button key={i} className="badge bg-primary text-wrap mx-1 text-light" onClick={onBtnClickYear}> {item}</button>
                             

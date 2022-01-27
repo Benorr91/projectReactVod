@@ -37,13 +37,14 @@ function Single(props) {
                             <p className="card-text"> Summary: {item.Plot}</p>
                             <p className="card-text">Movie time: {item.Runtime}</p>
                             <p className="card-text">Actors: {item.Actors}</p>
+                            {item.Ratings[0]?
                             <p className="card-text">Ratings: {item.Ratings[0].Value}
                                 {[...Array(Math.floor(item.imdbRating))].map((star) => {
                                     return (
                                         <span className="star">&#9733;</span>
                                     );
                                 })}
-                            </p>
+                            </p>:""}
                             <div className="box flex">
 
                             </div>
