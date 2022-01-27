@@ -1,14 +1,16 @@
 import React from 'react';
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { AiFillCopyrightCircle } from 'react-icons/ai';
-import {  Outlet } from 'react-router-dom';
+import {  Outlet,Link } from 'react-router-dom';
 
 function Layout(props) {
     return (
         <>
             <header className='header'>
+
         
             </header>
+            <div className='container  '>  <Link to={"/"}>Home</Link></div>
             <main>
                 <Outlet></Outlet>
             </main>
