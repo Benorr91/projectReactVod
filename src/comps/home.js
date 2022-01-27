@@ -38,7 +38,7 @@ function Home(props) {
     }
     let yearsAr = [];
 
-    for (let i = 2000; i <= 2022; i++) {
+    for (let i = 2000; i <= 2021; i++) {
         yearsAr.push(i);
     }
     console.log(yearsAr);
