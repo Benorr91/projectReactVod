@@ -109,7 +109,7 @@ function Home(props) {
                             </div>
                         )
                     })}
-                </div> : ""}
+                </div> : "No Data With this Search value"}
         </div>
     )
 }
