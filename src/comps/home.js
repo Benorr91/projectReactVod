@@ -5,13 +5,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 
 function Home(props) {
-    let re = new RegExp(/ab+c/, 'i')
     let params = useParams();
     let searchQ = useRef();
     let navigate = useNavigate();
     console.log(params.searchbyYear);
     console.log(params.searchbyCat);
     let [ar, setAr] = useState([])
+    let [value, setValue] = useState("")
 
 
     useEffect(() => {
@@ -48,7 +48,7 @@ function Home(props) {
 
     }
     const onBtnClickSearch = () => {
-        const value = re.exec(searchQ.current.value)
+        setValue(searchQ.current.value) 
         console.log(value);
         navigate("/search/" + searchQ.current.value);
         searchQ.current.value = "";
@@ -109,7 +109,7 @@ function Home(props) {
                             </div>
                         )
                     })}
-                </div> : <strong>"Sorry we couldn't find any matches for this value"</strong>}
+                </div> : <strong>"Sorry we couldn't find any matches for this value :"{value}"</strong>}
         </div>
     )
 }
