@@ -109,7 +109,7 @@ function Home(props) {
                             </div>
                         )
                     })}
-                </div> : "No Data With this Search value"}
+                </div> : <strong>"Sorry we couldn't find any matches for this value"</strong>}
         </div>
     )
 }
