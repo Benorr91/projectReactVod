@@ -109,7 +109,7 @@ function Home(props) {
                             </div>
                         )
                     })}
-                </div> : <strong>"Sorry we couldn't find any matches for this value :"{value}"</strong>}
+                </div> :<><strong>"Sorry we couldn't find any matches for this value :"{value}"</strong><div className="container mx-auto text-center">  <button className='btn btn-dark' onClick={() => navigate(-1)}>go back</button></div> </>}
         </div>
     )
 }
