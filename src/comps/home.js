@@ -63,7 +63,7 @@ function Home(props) {
         console.log(e.target.value);
 
     }
-    const years = [1991, 1978, 2015, 2020, 1948, 1999, 2015];
+    const years = [1991, 1978, 2015, 2020, 1948, 1999, 2012];
     years.sort();
 
     // const yearsAr = [];

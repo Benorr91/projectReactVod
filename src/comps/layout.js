@@ -10,7 +10,7 @@ function Layout(props) {
 
         
             </header>
-            <div className='container  '>  <Link to={"/"}>Home</Link></div>
+            <div className='container  '>  <Link className='badge bg-dark' to={"/"}>Home</Link></div>
             <main>
                 <Outlet></Outlet>
             </main>
